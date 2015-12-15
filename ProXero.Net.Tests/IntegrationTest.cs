@@ -35,7 +35,7 @@ namespace ProXero.Net.Tests
 
             client.ConnectAsync(new ServerAddress("localhost", 8090));
 
-            e.WaitOne();
+            Assert.That(e.WaitOne(TimeSpan.FromSeconds(10)), Is.True);
         }
 
         private void clientReceive(MessageInfo<IMessage> obj)
