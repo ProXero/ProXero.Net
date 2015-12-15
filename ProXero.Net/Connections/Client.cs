@@ -12,13 +12,11 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net
 {
-    class Client<TMessage> : IClient<TMessage>
+    class Client<TMessage> : Connection<TMessage>, IClient<TMessage>
     {
-        private IConnection<TMessage> connection;
-
-        public Client(IConnection<TMessage> connection)
+        public Client(IMessageSender<TMessage> messageSender, IStreamClientInbox<TMessage> streamInbox, IServerAddressConverter addressConverter) 
+            : base(messageSender, streamInbox, addressConverter)
         {
-            this.connection = connection;
         }
 
         public async Task ConnectAsync(ServerAddress serverAddress)
@@ -29,7 +27,7 @@ namespace ProXero.Net
                     {
                         try
                         {
-                            connection.Listen(serverAddress);
+                            Listen(serverAddress);
                         }
                         catch (Exception)
                         {
@@ -37,23 +35,6 @@ namespace ProXero.Net
                         }
                     }
                 });
-        }
-
-        public bool SendMessage(TMessage message)
-        {
-            return connection.SendMessage(message);
-        }
-
-
-        public IObservable<MessageInfo<TMessage>> Inbox
-        {
-            get { return connection.Inbox; }
-        }
-
-
-        public BehaviorSubject<bool> IsConnected
-        {
-            get { return connection.IsConnected; }
         }
     }
 }
