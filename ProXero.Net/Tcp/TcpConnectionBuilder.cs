@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net.Tcp
 {
-    class TcpConnectionBuilder : IConnectionBuilder
+    public class TcpConnectionBuilder : IConnectionBuilder
     {
         private TcpListener listener;
 

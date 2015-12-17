@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net
 {
-    class Server<TMessage> : IServer<TMessage>
+    public class Server<TMessage> : IServer<TMessage>
     {
         private readonly IConnectionBuilder listener;
         private readonly IFormatter formatter;

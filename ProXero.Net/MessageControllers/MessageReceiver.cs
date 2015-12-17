@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net
 {
-    class MessageReceiver<TMessage> : IMessageReceiver<TMessage>
+    public class MessageReceiver<TMessage> : IMessageReceiver<TMessage>
     {
         private IFormatter formatter;
 

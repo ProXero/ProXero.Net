@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net.Interfaces
 {
-    interface IConnection<TMessage>
+    public interface IConnection<TMessage>
     {
         void Listen(ServerAddress address);
 

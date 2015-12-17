@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net.Tcp
 {
-    class TcpAddressConverter : IServerAddressConverter
+    public class TcpAddressConverter : IServerAddressConverter
     {
         public IStreamClient Convert(DataClasses.ServerAddress address)
         {

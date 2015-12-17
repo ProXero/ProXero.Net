@@ -1,16 +1,14 @@
 ﻿using ProXero.Net.Interfaces;
 using ProXero.Net.Tcp;
 using LightInject;
-using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ProXero.Net
+namespace ProXero.Net.LightInject
 {
     public class Module : ICompositionRoot
     {
@@ -18,7 +16,6 @@ namespace ProXero.Net
         public void Compose(IServiceRegistry serviceRegistry)
         {
             serviceRegistry.Register<IFormatter, BinaryFormatter>();
-            serviceRegistry.Register<ILogger>(sf => NLog.LogManager.GetCurrentClassLogger());
             
             serviceRegistry.Register<IConnectionBuilder, TcpConnectionBuilder>();
             serviceRegistry.Register<IStreamClient, TcpStreamClient>();

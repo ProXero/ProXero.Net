@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net.Tcp
 {
-    class TcpStreamClient : IStreamClient
+    public class TcpStreamClient : IStreamClient
     {
         private TcpClient tcpClient;
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net
 {
-    class StreamClientInbox<TMessage> : IStreamClientInbox<TMessage>
+    public class StreamClientInbox<TMessage> : IStreamClientInbox<TMessage>
     {
         private IMessageReceiver<TMessage> messageReceiver;
 

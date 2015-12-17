@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using LightInject;
+using NLog;
 using NUnit.Framework;
 using ProXero.Net.DataClasses;
 using ProXero.Net.Interfaces;
+using ProXero.Net.LightInject;
 using ProXero.Net.Messages;
 
 namespace ProXero.Net.Tests
@@ -21,6 +23,8 @@ namespace ProXero.Net.Tests
         [Test]
         public void Connect()
         {
+            container.Register<ILogger>(sf => NLog.LogManager.GetCurrentClassLogger());
+            container.RegisterFrom<Module>();
 
             var server = container.GetInstance<IServer<IMessage>>();
 

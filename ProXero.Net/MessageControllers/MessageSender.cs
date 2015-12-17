@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net
 {
-    class MessageSender<TMessage> : IMessageSender<TMessage>
+    public class MessageSender<TMessage> : IMessageSender<TMessage>
     {
         private IFormatter formatter;
         private ILogger logger;

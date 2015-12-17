@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net.Interfaces
 {
-    interface IConnectionBuilder
+    public interface IConnectionBuilder
     {
         IStreamClient AcceptClient();
 

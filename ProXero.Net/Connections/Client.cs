@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ProXero.Net
 {
-    class Client<TMessage> : Connection<TMessage>, IClient<TMessage>
+    public class Client<TMessage> : Connection<TMessage>, IClient<TMessage>
     {
         public Client(IMessageSender<TMessage> messageSender, IStreamClientInbox<TMessage> streamInbox, IServerAddressConverter addressConverter) 
             : base(messageSender, streamInbox, addressConverter)
