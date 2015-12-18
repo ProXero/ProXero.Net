@@ -1,5 +1,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/qq2ax42b294fba37?svg=true)](https://ci.appveyor.com/project/ProXero/proxero-net)
 [![Nuget status](https://img.shields.io/nuget/v/ProXero.Net.svg)](https://img.shields.io/nuget/v/ProXero.Net.svg)
+[![codecov.io](https://codecov.io/github/ProXero/ProXero.Net/coverage.svg?branch=master)](https://codecov.io/github/ProXero/ProXero.Net?branch=master)
+
 
 # ProXero.Net
 
